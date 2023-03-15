@@ -27,8 +27,6 @@ io.on("connection", (socket) => {
 
     socket.on('disconnect', () => {
         users = users.filter(user => user.id != socket.id);
-        console.log('disconnect');
-
     });
 
 })
@@ -55,4 +53,4 @@ app.post("/", (req, res) => {
 
 
 
-server.listen(PORT, () => console.warn(`Running on http://127.0.0.1:${PORT}`));
+server.listen(PORT, '127.0.0.1', () => console.warn(`Running on PORT ${PORT}`));
